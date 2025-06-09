@@ -10,6 +10,9 @@ func squareRoot(inputNumber: Int) throws {
     if inputNumber < 1 || inputNumber > 10_000 {
         throw inputError.outOfBounds
     }
+
+    for 
+    
 }
 
 do {
