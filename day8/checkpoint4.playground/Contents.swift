@@ -4,20 +4,32 @@ enum inputError: Error {
     case noSqrt, outOfBounds
 }
 
-func squareRoot(inputNumber: Int) throws {
-    var answer = 1
+func squareRoot(num: Int) throws {
     
-    if inputNumber < 1 || inputNumber > 10_000 {
+    var numLoop = 1
+    
+    if num < 1 || num > 10_000 {
         throw inputError.outOfBounds
     }
-
-    for 
     
+    for i in 1...100 {
+        
+        if i * i == num {
+            print("The square root of \(num) is \(i). ")
+            break
+        } else {
+            throw inputError.noSqrt
+        }
+        
+    }
 }
 
 do {
-    try squareRoot(inputNumber: 20)
+    try squareRoot(num: <#T##Int#>)
 } catch inputError.outOfBounds {
-    print("The number is out of bounds.")
+    print("The value is out of bounds. Please use a number between 1 and 10.000")
+} catch inputError.noSqrt {
+    print("The value has no square root.")
 }
 
+print(squareRoot(num: 9))
