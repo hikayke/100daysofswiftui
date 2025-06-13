@@ -1,7 +1,8 @@
 import Cocoa
 
-enum inputError: Error {
-    case noSqrt, outOfBounds
+enum sqrtError: Error {
+    case outOfBounds
+    case noRoot
 }
 
 func squareRoot(num: Int) throws {
@@ -9,7 +10,7 @@ func squareRoot(num: Int) throws {
     var numLoop = 1
     
     if num < 1 || num > 10_000 {
-        throw inputError.outOfBounds
+        throw sqrtError.outOfBounds
     }
     
     for i in 1...100 {
@@ -18,18 +19,18 @@ func squareRoot(num: Int) throws {
             print("The square root of \(num) is \(i). ")
             break
         } else {
-            throw inputError.noSqrt
+            continue
         }
-        
     }
+    
 }
 
 do {
-    try squareRoot(num: <#T##Int#>)
-} catch inputError.outOfBounds {
-    print("The value is out of bounds. Please use a number between 1 and 10.000")
-} catch inputError.noSqrt {
-    print("The value has no square root.")
+    try squareRoot(num: 3)
+} catch sqrtError.outOfBounds {
+    print("The number you provided is out of bounds. Use a number between 1 and 10.000")
+} catch sqrtError.noRoot {
+    print("The number you provided has no real square root.")
 }
 
-print(squareRoot(num: 9))
+// struggling with throw sqrtError.noRoot - asked for help c:
