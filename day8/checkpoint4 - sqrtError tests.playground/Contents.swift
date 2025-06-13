@@ -32,11 +32,11 @@ func squareRoot(num: Int) throws {
 }
 
 do {
-    try squareRoot(num: 40000)
+    try squareRoot(num: 3)
 } catch sqrtError.outOfBounds {
     print("The number you provided is out of bounds. Use a number between 1 and 10.000")
 } catch sqrtError.noRoot {
     print("The number you provided has no real square root.")
 }
 
-// i got it!!! without help!!! so happy!!!!
+// struggling with throw sqrtError.noRoot - asked for help c:
