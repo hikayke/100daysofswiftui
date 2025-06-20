@@ -1,4 +1,4 @@
-import Cocoa
+/* import Cocoa
 
 let luckyNumbers = [7, 4, 38, 21, 16, 15, 12, 33, 31, 49]
 
@@ -10,4 +10,13 @@ let mappedNumbers = filterEven.map {String($0)}
 
 print(filterEven)
 print(sortedNumbers)
-print(mappedNumbers)
+print(mappedNumbers) */
+
+
+let luckyNumbers = [7, 4, 38, 21, 16, 15, 12, 33, 31, 49]
+
+let closureNumbers = luckyNumbers.filter({$0 % 2 != 0}).sorted().map({String($0)})
+
+for number in closureNumbers {
+    print("\(number) is a lucky number.")
+}
