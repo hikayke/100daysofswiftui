@@ -63,18 +63,27 @@ class Lion: Cat {
 
 var dogClass = Dog(legs: 4)
 dogClass.speak()
+print(dogClass.legs)
 
 var dogCorgi = Corgi(legs: 4)
 dogCorgi.speak()
+print(dogCorgi.legs)
 
-var dogPoodle = Poodle(legs: 3)
+var dogPoodle = Poodle(legs: 4)
 dogPoodle.speak()
+print(dogPoodle.legs)
 
 var catClass = Cat(isTame: true, legs: 4)
 catClass.speak()
+print(catClass.legs)
+print(catClass.isTame)
 
 var catPersian = Persian(isTame: true, legs: 4)
 catPersian.speak()
+print(catPersian.legs)
+print(catPersian.isTame)
 
 var catLion = Lion(isTame:false, legs: 4)
 catLion.speak()
+print(catLion.legs)
+print(catLion.isTame)
