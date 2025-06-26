@@ -1,3 +1,5 @@
+import Cocoa
+
 class Animals {
     
     var legs: Int
